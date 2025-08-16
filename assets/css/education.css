@@ -1,0 +1,56 @@
+/* Education Section Styles */
+#education .education-item {
+    transition: transform 0.3s ease;
+}
+
+#education .education-item:hover {
+    transform: translateY(-5px);
+}
+
+#education .card {
+    border: none;
+    border-radius: 15px;
+    background: var(--card-bg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#education .card-body {
+    padding: 2rem;
+}
+
+#education .education-degree {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+#education .education-field {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+#education .education-school {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+#education .education-duration,
+#education .education-details,
+#education .education-score {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 0.3rem;
+}
+
+#education .education-score {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Add hover effect */
+#education .card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
