@@ -27,9 +27,9 @@ Welcome to my portfolio website repository! This website showcases my skills, pr
 
 ## 🔗 Links
 
-- **Live Website**: [Visit Portfolio](https://nuruzzaman-nuru.github.io/My_portfolio)
-- **GitHub**: [Nuruzzaman-Nuru](https://github.com/Nuruzzaman-Nuru)
-- **LinkedIn**: [MD.Nurzaman](https://www.linkedin.com/in/md-nurzaman-7b9858262/)
+- 🌐 **Live Website**: [Visit Portfolio](https://nuruzzaman-nuru.github.io/My_portfolio)
+- <img src="https://github.com/fluidicon.png" alt="GitHub Icon" width="16" height="16"> **GitHub**: [Nuruzzaman-Nuru](https://github.com/Nuruzzaman-Nuru)
+- <img src="https://static.licdn.com/sc/h/akt4ae504epesldzj74dzred8" alt="LinkedIn Icon" width="16" height="16"> **LinkedIn**: [MD.Nurzaman](https://www.linkedin.com/in/md-nurzaman-7b9858262/)
 
 ## 📞 Contact
 
