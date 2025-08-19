@@ -10,10 +10,41 @@
     transform: translateY(-5px);
 }
 
+#projects .card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+#projects .card-img-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+}
+
 #projects .card-img-top {
-    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
+}
+
+#projects .card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+#projects .card-body {
+    padding: 2rem;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.6)
+    );
 }
 
 #projects .card:hover .card-img-top {
