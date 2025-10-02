@@ -1,0 +1,203 @@
+/* Modern About Section Styling */
+#about {
+    position: relative;
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+/* Background Effect */
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(41, 98, 255, 0.05), transparent);
+    z-index: -1;
+}
+
+/* Grid Pattern */
+#about::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: -1;
+}
+
+.about-portrait {
+    position: relative;
+    padding: 20px;
+}
+
+/* Image Container Styling */
+.about-portrait {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Main Image Styling */
+.about-portrait .pic {
+    transform: scale(0.95);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 1;
+}
+
+/* Hover Effect */
+.about-portrait:hover .pic {
+    transform: scale(1);
+    box-shadow: 0 20px 40px rgba(41, 98, 255, 0.2);
+}
+
+/* Glowing Border Effect */
+.about-portrait::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--bs-primary), transparent);
+    border-radius: 20px;
+    padding: 3px;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.about-portrait:hover::before {
+    opacity: 1;
+}
+
+/* Bio Content Styling */
+.bio {
+    position: relative;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.bio:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Text Animation */
+.bio p {
+    position: relative;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.bio:hover p {
+    opacity: 1;
+}
+
+/* Highlight Important Text */
+.highlight {
+    color: var(--bs-primary);
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: var(--bs-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.bio:hover .highlight::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Floating Decorative Elements */
+.floating-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--bs-primary);
+    opacity: 0.5;
+    animation: float 3s infinite ease-in-out;
+}
+
+.dot-1 { top: 20%; left: -20px; animation-delay: 0s; }
+.dot-2 { top: 50%; right: -20px; animation-delay: 0.5s; }
+.dot-3 { bottom: 20%; left: -20px; animation-delay: 1s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.2); }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .about-portrait {
+        margin-bottom: 30px;
+    }
+    
+    .bio {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #about {
+        padding: 60px 0;
+    }
+    
+    .about-portrait {
+        max-width: 400px;
+        margin: 0 auto 30px;
+    }
+}
+
+/* Modern Section Title */
+.section-heading {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background: var(--bs-primary);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}

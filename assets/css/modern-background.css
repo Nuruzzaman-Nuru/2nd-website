@@ -1,0 +1,154 @@
+/* Modern Background Styles */
+:root {
+    --gradient-bg-dark: #000000;
+    --gradient-primary: #2962ff;
+    --gradient-secondary: #1e3a8a;
+    --gradient-accent: #3b82f6;
+}
+
+body {
+    background: linear-gradient(150deg, #000000, #1a0b2e);
+    position: relative;
+    min-height: 100vh;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Animated Background Elements */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(41, 98, 255, 0.03) 0%, transparent 25%),
+        radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 25%),
+        radial-gradient(circle at 40% 80%, rgba(30, 58, 138, 0.03) 0%, transparent 25%);
+    z-index: -1;
+}
+
+/* Grid Overlay */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+/* Section Background Enhancements */
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg, 
+        rgba(41, 98, 255, 0.03) 0%,
+        transparent 40%,
+        transparent 60%,
+        rgba(59, 130, 246, 0.03) 100%
+    );
+    z-index: -1;
+}
+
+/* Card and Container Backgrounds */
+.card, .bio {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effects */
+.card:hover, .bio:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Theme Colors */
+.text-primary {
+    color: var(--gradient-accent) !important;
+}
+
+.bg-primary {
+    background: linear-gradient(135deg, var(--gradient-primary), var(--gradient-secondary)) !important;
+}
+
+/* Section Transitions */
+section {
+    transition: background-color 0.3s ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body::before {
+        background-size: 150% 150%;
+    }
+    
+    body::after {
+        background-size: 30px 30px;
+    }
+}
+
+/* Dark Theme Enhancements */
+[data-bs-theme="dark"] {
+    --bs-body-bg: var(--gradient-bg-dark);
+    --bs-body-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Glow Effects */
+.section-heading::after {
+    box-shadow: 0 0 15px var(--gradient-primary);
+}
+
+/* Button Background */
+.primary-bg-btn {
+    background: linear-gradient(135deg, var(--gradient-primary), var(--gradient-secondary));
+    border: none;
+    position: relative;
+    z-index: 1;
+}
+
+.primary-bg-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--gradient-secondary), var(--gradient-primary));
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.primary-bg-btn:hover::before {
+    opacity: 1;
+}
