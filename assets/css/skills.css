@@ -6,6 +6,10 @@
     margin-top: 2rem;
 }
 
+/* Center the skills grid within the page and ensure heading is centered */
+.skills-grid { max-width: 1100px; margin-left: auto; margin-right: auto; }
+.section-heading { text-align: center !important; }
+
 .skill-item {
     display: flex;
     align-items: center;
