@@ -50,7 +50,8 @@
         <style>
             /* Certificates section visual style to match portfolio theme */
             #certificates { padding: 60px 0; }
-            #certificates .section-heading { text-align: left; padding-left: 12px; color: #ff6b6b; font-style: italic; }
+            /* Use global centered headings and keep certificate heading styling subtle */
+            #certificates .section-heading { color: #ff6b6b; font-style: italic; }
             #certificates .muted-text { color: rgba(255,255,255,0.75); }
             #certificates .card { background: rgba(10,6,20,0.6); border-radius:12px; }
             #certificates .card .card-body { padding: 28px; }
@@ -58,6 +59,9 @@
             #certificates .btn-outline-primary { border-color: rgba(58,123,255,0.9); color: rgba(58,123,255,0.95); }
             #certificates .btn-outline-primary:hover { background: rgba(58,123,255,0.06); }
             @media (max-width: 767px) { #certificates .section-heading { text-align:center; padding-left:0 } }
+
+            /* Force-center all section headings site-wide (override other styles) */
+            .section-heading { text-align: center !important; }
         </style>
 
     <!-- Adding floating shapes -->
@@ -155,6 +159,24 @@
                         
                     </div>
                 </div>
+
+                <!-- Desktop navbar (visible on md+) - duplicated from offcanvas to keep menus consistent -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-underline justify-content-end flex-grow-1">
+                        <li class="nav-item" data-aos="fade-down" data-aos-delay="500"><a href="#hero" class="nav-link active" aria-current="page">Home</a></li>
+                        <li class="nav-item" data-aos="fade-down" data-aos-delay="600"><a href="#about" class="nav-link">About</a></li>
+                        <li class="nav-item" data-aos="fade-down" data-aos-delay="700"><a href="#education" class="nav-link">Education</a></li>
+                        <li class="nav-item" data-aos="fade-down" data-aos-delay="700"><a href="#skills" class="nav-link">Skills</a></li>
+                        <li class="nav-item" data-aos="fade-down" data-aos-delay="800"><a href="#projects" class="nav-link">Projects</a></li>
+                        <li class="nav-item" data-aos="fade-down" data-aos-delay="900"><a href="#Research" class="nav-link">Research</a></li>
+                        <li class="nav-item" data-aos="fade-down" data-aos-delay="900"><a href="#certificates" class="nav-link">Certificates</a></li>
+                        <li class="nav-item" data-aos="fade-down" data-aos-delay="900"><a href="#projects" class="nav-link">Experience</a></li>
+                        <li class="nav-item" data-aos="fade-down" data-aos-delay="900"><a href="#leadership" class="nav-link">Leadership</a></li>
+                        <li class="nav-item" data-aos="fade-down" data-aos-delay="800"><a href="#things-i-love" class="nav-link">Interests</a></li>
+                        <li class="nav-item" data-aos="fade-down" data-aos-delay="1000"><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+
                 <button class="btn border-0" id="switchTheme" data-aos="fade-down" data-aos-delay="600"><i class="bi bi-brightness-high-fill"></i></button>
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle Navigation Menu" data-aos="fade-down" data-aos-delay="600"><i class="bi bi-list toggle-icon"></i></button>
             </div>
@@ -422,7 +444,7 @@
                                       <span class="badge bg-primary">MySQL</span>
                                       
                         <div class="skill-item" data-aos="fade-up" data-aos-delay="1000">
-                            <img src="assets/images/skills/SQL.svg" alt="SQL" class="skill-icon">
+                            <img src="assets/images/skills/sql.png" alt="SQL" class="skill-icon">
                             <div class="skill-info">
                                 <h5>MySQL <span class="text-muted">(60%)</span></h5>
                                 <div class="progress">
@@ -519,7 +541,7 @@
     </section>
 
     <!-- Research -->
-    <section id="blogs">
+    <section id="Research">
         <div class="container">
             <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">My Research Work</span></h6>
             <h2 class="section-heading text-center">Research</h2>
@@ -566,6 +588,68 @@
                                          
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+         <!-- Certificates -->
+    <section id="certificates">
+        <div class="container">
+            <div class="d-flex align-items-center mb-3">
+                <h6 class="me-3"><span class="btn btn-sm theme-button theme-text">Credentials</span></h6>
+                <h2 class="section-heading mb-0">Certificates</h2>
+            </div>
+            <p class="muted-text mt-1 mb-4">Some certifications I've earned — click View to open the official certificate.</p>
+
+            <!-- Simple responsive grid of link-cards inspired by user's snippet -->
+            <div class="row justify-content-center gy-4" data-aos="fade-up">
+                <div class="col-lg-10">
+                    <div class="row row-cols-1 row-cols-md-3 g-3">
+                        <!-- Card 1 -->
+                        <div class="col">
+                            <div class="card h-100 shadow-sm border-0" data-aos="fade-up">
+                                <div class="card-img-container">
+                                    <img src="assets/images/CERTIFICATIONS/Frontend devloper.png" class="card-img-top cert-thumb" data-full="assets/images/certificates/hackerrank.png" data-title="Frontend Developer (React) - HackerRank" alt="HackerRank certificate" onerror="this.style.display='none'">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">Frontend Developer (React)</h5>
+                                    <p class="small text-muted mb-1">HackerRank • Issued Oct 2025</p>
+                                    <p class="small text-muted mb-2">Credential ID: C1189464A9DA</p>
+                                    <a class="btn btn-outline-primary btn-sm" href="https://www.hackerrank.com/certificates/c1189464a9da" target="_blank" rel="noopener">Show credential <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="col">
+                            <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="100">
+                                <div class="card-img-container">
+                                    <img src="./assets/images/CERTIFICATIONS//Backend.png" class="card-img-top cert-thumb" data-full="assets/images/certificates/simplelearn.png" data-title="Full-Stack Development 101 - Simplilearn" alt="Simplilearn certificate" onerror="this.style.display='none'">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">Full-Stack Development 101</h5>
+                                    <p class="small text-muted mb-1">Simplilearn • Issued Oct 2025</p>
+                                    <p class="small text-muted mb-2">Certificate Code: 9214198</p>
+                                    <a class="btn btn-outline-primary btn-sm" href="https://simpli-web.app.link/e/vKfcfiRAGXb" target="_blank" rel="noopener">Show credential <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="col">
+                            <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="200">
+                                <div class="card-img-container">
+                                    <img src="assets/images/CERTIFICATIONS/Udemy git and github.jpg" class="card-img-top cert-thumb" data-full="assets/images/certificates/udemy_git.png" data-title="GIT, GitLab, GitHub Fundamentals - Udemy" alt="Udemy certificate" onerror="this.style.display='none'">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">GIT, GitLab, GitHub Fundamentals</h5>
+                                    <p class="small text-muted mb-1">Udemy • Issued Oct 2025</p>
+                                    <p class="small text-muted mb-2">Credential ID: UC-f727bd59-1633-4017-a25d-37f616262338</p>
+                                    <a class="btn btn-outline-primary btn-sm" href="https://www.udemy.com/certificate/UC-f727bd59-1633-4017-a25d-371616262338/" target="_blank" rel="noopener">Show credential <i class="bi bi-box-arrow-up-right ms-1"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -661,69 +745,7 @@
             </div>
         </div>
     </section> -->
-            
-    <!-- Certificates -->
-    <section id="certificates">
-        <div class="container">
-            <div class="d-flex align-items-center mb-3">
-                <h6 class="me-3"><span class="btn btn-sm theme-button theme-text">Credentials</span></h6>
-                <h2 class="section-heading mb-0">Certificates</h2>
-            </div>
-            <p class="muted-text mt-1 mb-4">Some certifications I've earned — click View to open the official certificate.</p>
-
-            <!-- Simple responsive grid of link-cards inspired by user's snippet -->
-            <div class="row justify-content-center gy-4" data-aos="fade-up">
-                <div class="col-lg-10">
-                    <div class="row row-cols-1 row-cols-md-3 g-3">
-                        <!-- Card 1 -->
-                        <div class="col">
-                            <div class="card h-100 shadow-sm border-0" data-aos="fade-up">
-                                <div class="card-img-container">
-                                    <img src="assets/images/CERTIFICATIONS/Frontend devloper.png" class="card-img-top cert-thumb" data-full="assets/images/certificates/hackerrank.png" data-title="Frontend Developer (React) - HackerRank" alt="HackerRank certificate" onerror="this.style.display='none'">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Frontend Developer (React)</h5>
-                                    <p class="small text-muted mb-1">HackerRank • Issued Oct 2025</p>
-                                    <p class="small text-muted mb-2">Credential ID: C1189464A9DA</p>
-                                    <a class="btn btn-outline-primary btn-sm" href="https://www.hackerrank.com/certificates/c1189464a9da" target="_blank" rel="noopener">Show credential <i class="bi bi-box-arrow-up-right ms-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 2 -->
-                        <div class="col">
-                            <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="100">
-                                <div class="card-img-container">
-                                    <img src="./assets/images/CERTIFICATIONS//Backend.png" class="card-img-top cert-thumb" data-full="assets/images/certificates/simplelearn.png" data-title="Full-Stack Development 101 - Simplilearn" alt="Simplilearn certificate" onerror="this.style.display='none'">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Full-Stack Development 101</h5>
-                                    <p class="small text-muted mb-1">Simplilearn • Issued Oct 2025</p>
-                                    <p class="small text-muted mb-2">Certificate Code: 9214198</p>
-                                    <a class="btn btn-outline-primary btn-sm" href="https://simpli-web.app.link/e/vKfcfiRAGXb" target="_blank" rel="noopener">Show credential <i class="bi bi-box-arrow-up-right ms-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 3 -->
-                        <div class="col">
-                            <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="200">
-                                <div class="card-img-container">
-                                    <img src="assets/images/CERTIFICATIONS/Udemy git and github.jpg" class="card-img-top cert-thumb" data-full="assets/images/certificates/udemy_git.png" data-title="GIT, GitLab, GitHub Fundamentals - Udemy" alt="Udemy certificate" onerror="this.style.display='none'">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">GIT, GitLab, GitHub Fundamentals</h5>
-                                    <p class="small text-muted mb-1">Udemy • Issued Oct 2025</p>
-                                    <p class="small text-muted mb-2">Credential ID: UC-f727bd59-1633-4017-a25d-37f616262338</p>
-                                    <a class="btn btn-outline-primary btn-sm" href="https://www.udemy.com/certificate/UC-f727bd59-1633-4017-a25d-371616262338/" target="_blank" rel="noopener">Show credential <i class="bi bi-box-arrow-up-right ms-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        
 
     <!-- Contact -->
         <div class="container">
