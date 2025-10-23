@@ -326,28 +326,16 @@ a:hover{
     -webkit-backdrop-filter: blur(20px);
 }
 
-    @media (max-width: 767px) {
-        #switchTheme{
-            display: flex;
-            justify-content: end;
-            flex-grow: 1;
-        }
-    }
-
 #header .navbar{
     backdrop-filter: 20px;
     -webkit-backdrop-filter: 20px;
     padding: 15px 0;
 }
 
-/* Position dark mode toggle in the top-right corner of the navbar */
-#header .container { position: relative; }
-#switchTheme{
-    position: absolute;
-    right: 20px;
-    top: 15px;
-    width: 48px;
-    height: 48px;
+/* Style the dark mode toggle button */
+#switchTheme {
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -355,9 +343,9 @@ a:hover{
     background: rgba(255,255,255,0.15);
     border: 2px solid rgba(255,255,255,0.2);
     color: #ffd700;
-    z-index: 1050;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin-left: 0.5rem;
 }
 
 #switchTheme:hover {
@@ -368,6 +356,15 @@ a:hover{
 
 [data-bs-theme="light"] #switchTheme {
     color: #ff8c00;
+}
+
+@media (max-width: 767px) {
+    #switchTheme {
+        margin: 0.5rem 0;
+    }
+    .navbar-nav {
+        gap: 0.5rem;
+    }
 }
 
 /* Keep some space on small screens so it doesn't overlap the mobile toggler */
