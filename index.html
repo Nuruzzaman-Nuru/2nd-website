@@ -46,6 +46,20 @@
     <link rel="stylesheet" href="assets/css/modern-about.css">
     <link rel="stylesheet" href="assets/css/modern-background.css">
 
+        <!-- Certificates custom styles -->
+        <style>
+            /* Certificates section visual style to match portfolio theme */
+            #certificates { padding: 60px 0; }
+            #certificates .section-heading { text-align: left; padding-left: 12px; color: #ff6b6b; font-style: italic; }
+            #certificates .muted-text { color: rgba(255,255,255,0.75); }
+            #certificates .card { background: rgba(10,6,20,0.6); border-radius:12px; }
+            #certificates .card .card-body { padding: 28px; }
+            #certificates .card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.6); transition: all 240ms ease; }
+            #certificates .btn-outline-primary { border-color: rgba(58,123,255,0.9); color: rgba(58,123,255,0.95); }
+            #certificates .btn-outline-primary:hover { background: rgba(58,123,255,0.06); }
+            @media (max-width: 767px) { #certificates .section-heading { text-align:center; padding-left:0 } }
+        </style>
+
     <!-- Adding floating shapes -->
     <div class="floating-shape shape1">
         <svg width="50" height="50" viewBox="0 0 100 100">
@@ -129,7 +143,8 @@
                             <li class="nav-item" data-aos="fade-down" data-aos-delay="700" data-bs-dismiss="offcanvas"><a href="#education" class="nav-link">Education</a></li>
                                           <li class="nav-item" data-aos="fade-down" data-aos-delay="700" data-bs-dismiss="offcanvas" ><a href="#skills" class="nav-link">Skills</a></li>
                             <li class="nav-item" data-aos="fade-down" data-aos-delay="800" data-bs-dismiss="offcanvas"><a href="#projects" class="nav-link">Projects</a></li>
-                            <li class="nav-item" data-aos="fade-down" data-aos-delay="900" data-bs-dismiss="offcanvas"><a href="#blogs" class="nav-link">Research</a></li>
+                            <li class="nav-item" data-aos="fade-down" data-aos-delay="900" data-bs-dismiss="offcanvas"><a href="#Research" class="nav-link">Research</a></li>
+                            <li class="nav-item" data-aos="fade-down" data-aos-delay="900" data-bs-dismiss="offcanvas"><a href="#certificates" class="nav-link">Certificates</a></li>
                             <li class="nav-item" data-aos="fade-down" data-aos-delay="900" data-bs-dismiss="offcanvas"><a href="#projects" class="nav-link">Experience</a></li>
                             <li class="nav-item" data-aos="fade-down" data-aos-delay="900" data-bs-dismiss="offcanvas"><a href="#leadership" class="nav-link">Leadership</a></li>
                                       <li class="nav-item" data-aos="fade-down" data-aos-delay="800" data-bs-dismiss="offcanvas"><a href="#things-i-love" class="nav-link">Interests</a></li>
@@ -647,8 +662,70 @@
         </div>
     </section> -->
             
+    <!-- Certificates -->
+    <section id="certificates">
+        <div class="container">
+            <div class="d-flex align-items-center mb-3">
+                <h6 class="me-3"><span class="btn btn-sm theme-button theme-text">Credentials</span></h6>
+                <h2 class="section-heading mb-0">Certificates</h2>
+            </div>
+            <p class="muted-text mt-1 mb-4">Some certifications I've earned — click View to open the official certificate.</p>
+
+            <!-- Simple responsive grid of link-cards inspired by user's snippet -->
+            <div class="row justify-content-center gy-4" data-aos="fade-up">
+                <div class="col-lg-10">
+                    <div class="row row-cols-1 row-cols-md-3 g-3">
+                        <!-- Card 1 -->
+                        <div class="col">
+                            <div class="card h-100 shadow-sm border-0" data-aos="fade-up">
+                                <div class="card-img-container">
+                                    <img src="assets/images/CERTIFICATIONS/Frontend devloper.png" class="card-img-top cert-thumb" data-full="assets/images/certificates/hackerrank.png" data-title="Frontend Developer (React) - HackerRank" alt="HackerRank certificate" onerror="this.style.display='none'">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">Frontend Developer (React)</h5>
+                                    <p class="small text-muted mb-1">HackerRank • Issued Oct 2025</p>
+                                    <p class="small text-muted mb-2">Credential ID: C1189464A9DA</p>
+                                    <a class="btn btn-outline-primary btn-sm" href="https://www.hackerrank.com/certificates/c1189464a9da" target="_blank" rel="noopener">Show credential <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="col">
+                            <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="100">
+                                <div class="card-img-container">
+                                    <img src="./assets/images/CERTIFICATIONS//Backend.png" class="card-img-top cert-thumb" data-full="assets/images/certificates/simplelearn.png" data-title="Full-Stack Development 101 - Simplilearn" alt="Simplilearn certificate" onerror="this.style.display='none'">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">Full-Stack Development 101</h5>
+                                    <p class="small text-muted mb-1">Simplilearn • Issued Oct 2025</p>
+                                    <p class="small text-muted mb-2">Certificate Code: 9214198</p>
+                                    <a class="btn btn-outline-primary btn-sm" href="https://simpli-web.app.link/e/vKfcfiRAGXb" target="_blank" rel="noopener">Show credential <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="col">
+                            <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="200">
+                                <div class="card-img-container">
+                                    <img src="assets/images/CERTIFICATIONS/Udemy git and github.jpg" class="card-img-top cert-thumb" data-full="assets/images/certificates/udemy_git.png" data-title="GIT, GitLab, GitHub Fundamentals - Udemy" alt="Udemy certificate" onerror="this.style.display='none'">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">GIT, GitLab, GitHub Fundamentals</h5>
+                                    <p class="small text-muted mb-1">Udemy • Issued Oct 2025</p>
+                                    <p class="small text-muted mb-2">Credential ID: UC-f727bd59-1633-4017-a25d-37f616262338</p>
+                                    <a class="btn btn-outline-primary btn-sm" href="https://www.udemy.com/certificate/UC-f727bd59-1633-4017-a25d-371616262338/" target="_blank" rel="noopener">Show credential <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact -->
-    <section id="contact">
         <div class="container">
             <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">What's next!</span></h6>
             <h2 class="section-heading text-center">Get In Touch</h2>
@@ -746,6 +823,43 @@
     <script src="assets/js/owl.carousel.min.js" defer></script>
     <script src="assets/js/bootstrap.min.js" defer></script>
     <script src="assets/js/script.js" defer></script>
+</script>
+
+        <!-- Certificate preview modal -->
+        <div class="modal fade" id="certModal" tabindex="-1" aria-labelledby="certModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content bg-dark text-light">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title" id="certModalLabel"></h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <img id="certModalImg" src="" alt="certificate" class="img-fluid" style="max-height:80vh; object-fit:contain;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script defer>
+            (function () {
+                // Ensure bootstrap is available
+                if (typeof bootstrap === 'undefined') return;
+                const modalEl = document.getElementById('certModal');
+                const modalImg = document.getElementById('certModalImg');
+                const modalLabel = document.getElementById('certModalLabel');
+                const bsModal = new bootstrap.Modal(modalEl, {});
+
+                document.querySelectorAll('.cert-thumb').forEach(el => {
+                    el.addEventListener('click', () => {
+                        const full = el.getAttribute('data-full') || el.src;
+                        const title = el.getAttribute('data-title') || el.alt || 'Certificate';
+                        modalImg.src = full;
+                        modalLabel.textContent = title;
+                        bsModal.show();
+                    });
+                });
+            })();
+        </script>
 
 </body>
 </html>
