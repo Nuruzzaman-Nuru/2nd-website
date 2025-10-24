@@ -15,7 +15,7 @@
 
 /* Global Variables */
 :root{
-    --font-family: Arial, Helvetica, sans-serif;
+    --font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --primary-color: #415de6;
     --secondary-color: #e64157;
     --tertiary-color: #12c2e9;
@@ -28,7 +28,9 @@
 }   
         body {
             font-family: var(--font-family);
-            font-weight: 300;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 1.5;
             background-image: url('assets/images/dark-bg.webp');
             background-size: cover;
             background-attachment: fixed;
@@ -36,9 +38,11 @@
             background-repeat: no-repeat;
         }
 
-        /* Headings use Times New Roman */
+        /* Default heading styles */
         h1, h2, h3, h4, h5, h6, .section-heading {
-            font-family: 'Times New Roman', Times, serif;
+            font-family: var(--font-family);
+            font-weight: 600;
+            line-height: 1.2;
         }
 
 
@@ -106,11 +110,34 @@ a:hover{
 /* Light Mode styles */
 [data-bs-theme="light"] {
     --text-color: #000;
-    --muted-text: #000;
+    --muted-text: #333;
     --bg-color: #fff;
     --btn-color: #fff;
     --offcanvas-bg: rgba(215, 215, 215, 0.9);
     --offcanvas-border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-bs-theme="light"] body {
+    color: #000;
+}
+
+[data-bs-theme="light"] .bio,
+[data-bs-theme="light"] .bio p,
+[data-bs-theme="light"] .bio ul li {
+    color: #222;
+    font-weight: 500;
+}
+
+[data-bs-theme="light"] .section-heading {
+    color: #000;
+}
+
+[data-bs-theme="light"] .muted-text {
+    color: #333;
+}
+
+[data-bs-theme="light"] .navbar-nav .nav-link {
+    color: #000;
 }
 
 *::selection {
@@ -171,8 +198,24 @@ a:hover{
 /* About section centering and responsive tweaks */
 .about-portrait { display:flex; justify-content:center; }
 .about-portrait .img-fluid { max-width: 320px; border-radius: 8px; }
-.bio { text-align: center; }
-.bio ul { display: inline-block; text-align: left; margin: 0 auto 1rem auto; }
+.bio { 
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.6;
+}
+.bio ul { 
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto 1rem auto;
+    font-size: 16px;
+    line-height: 1.6;
+}
+.bio p {
+    font-size: 16px;
+    margin-bottom: 1rem;
+    font-weight: normal;
+}
 @media (max-width: 991px) {
     .bio { padding: 0 1rem; }
     .about-portrait .img-fluid { max-width: 260px; }
@@ -276,10 +319,20 @@ a:hover{
     -webkit-text-fill-color: transparent;
 }
 
-.section-heading{
-    font-family: 'Dancing Script',var(--font-family);
+.section-heading {
+    font-family: var(--font-family);
     margin: 18px 0px;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
 }
+
+h1 { font-size: 32px; }
+h2 { font-size: 28px; }
+h3 { font-size: 24px; }
+h4 { font-size: 20px; }
+h5 { font-size: 18px; }
+h6 { font-size: 16px; }
 
 .cursor-not-allowed{
     cursor: not-allowed!important;
@@ -624,6 +677,16 @@ a:hover{
     height: auto;
     margin: 0 auto;
     display: block;
+    border: 4px solid rgba(65, 93, 230, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(65, 93, 230, 0.2);
+    transition: all 0.3s ease;
+}
+
+.about-portrait .pic:hover {
+    transform: translateY(-5px);
+    border-color: rgba(65, 93, 230, 0.5);
+    box-shadow: 0 12px 30px rgba(65, 93, 230, 0.3);
 }
 
 #about .bio{
@@ -1227,13 +1290,20 @@ a:hover{
             z-index: -1;
         }
 
-        .section-heading {
-            color: #e11414;
-            position: relative;
-            margin-bottom: 2rem;
-        }
+.section-heading {
+    position: relative;
+    margin-bottom: 2rem;
+}
 
-        .card {
+#Research .section-heading,
+#certificates .section-heading {
+    color: #000 !important;
+}
+
+[data-bs-theme="dark"] #Research .section-heading,
+[data-bs-theme="dark"] #certificates .section-heading {
+    color: #fff !important;
+}        .card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);

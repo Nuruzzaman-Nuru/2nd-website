@@ -101,6 +101,34 @@
             #things-i-love .d-flex { 
                 justify-content: center !important;
             }
+
+            /* Typewriter effect for Hello */
+            .typewriter-text {
+                overflow: hidden;
+                white-space: nowrap;
+                margin: 0;
+                animation: typing 2s steps(20, end);
+            }
+
+            /* Typewriter effect for MD.Nurzaman */
+            .typewriter-text-2 {
+                overflow: hidden;
+                white-space: nowrap;
+                margin: 0;
+                visibility: hidden;
+                animation: typing 2s steps(20, end) 2s forwards;
+            }
+
+            @keyframes typing {
+                from { 
+                    width: 0;
+                    visibility: visible;
+                }
+                to { 
+                    width: 100%;
+                    visibility: visible;
+                }
+            }
         </style>
 
     <!-- Adding floating shapes -->
@@ -158,6 +186,11 @@
 </head>
 
 <body data-bs-theme="dark" data-bs-spy="scroll" data-bs-target="#navbar">
+    <script>
+        // Set default theme to dark
+        document.documentElement.setAttribute('data-bs-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    </script>
 
     <!-- Preloader -->
     <div id="preloader"></div>
@@ -270,8 +303,8 @@
                     </div>
                 </div>
                 <div class="col-lg-7 hero-content">
-                    <span class="h3" data-aos="fade-up" data-aos-delay="0">Hello</span>
-                    <h1 class="name" data-aos="fade-up" data-aos-delay="200"><span>MD.Nurzaman</h1>
+                    <h1 class="name typewriter-text" data-aos="fade-up" data-aos-delay="0">Hello</h1>
+                    <h1 class="name typewriter-text-2" data-aos="fade-up" data-aos-delay="200"><span>MD.Nurzaman</h1>
                     <button type="button" class="btn btn-sm mt-3 mb-3 btn-showcase"  data-aos="fade-up" data-aos-delay="400"><i class="bi bi-stars"></i> Web Developer</button>
                     <p class="tagline mb-3" data-aos="fade-up" data-aos-delay="600">A website isn't just something I build—it's something I imagine <span class="underline">uniquely</span>. I believe in thinking differently, designing meaningfully, and coding with <span class="underline">care</span>.</p>
                     <div class="social-icons pb-2 pt-2 mb-2">
@@ -314,8 +347,8 @@
                         </p>
                         <ul>
                             <li>Frontend Development with HTML, CSS, and JavaScript</li>
-                            <li>Backend Development using Python and SQL</li>
-                            <li>Modern Frameworks like React.js and Vue.js</li>
+                            <li>Backend Development using PHP Python and MySQL</li>
+                            <li>Modern Frameworks like React.js</li>
                             <li>Clean Code Architecture and User-Centric Design</li>
                         </ul>
                         <p>
@@ -478,6 +511,15 @@
                             </div>
                         </div>
 
+                        <div class="skill-item" data-aos="fade-up" data-aos-delay="600">
+                            <img src="assets/images/skills/CSS.svg" alt="CSS3" class="skill-icon">
+                            <div class="skill-info">
+                                <h5>Tailwind CSS <span class="text-muted">(80%)</span></h5>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 85%" data-value="85"></div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="skill-item" data-aos="fade-up" data-aos-delay="700">
                             <img src="assets/images/skills/JS.svg" alt="JavaScript" class="skill-icon">
                             <div class="skill-info">
@@ -491,7 +533,7 @@
                         <div class="skill-item" data-aos="fade-up" data-aos-delay="800">
                             <img src="assets/images/skills/EJS.svg" alt="React" class="skill-icon">
                             <div class="skill-info">
-                                <h5>React <span class="text-muted">(20%)</span></h5>
+                                <h5>ReactJS <span class="text-muted">(20%)</span></h5>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 20%" data-value="20"></div>
                                 </div>
@@ -515,8 +557,8 @@
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 40%" data-value="40"></div>
                                 </div>
-                                      <span class="badge bg-primary">MySQL</span>
-                                      
+                            </div>
+                        </div>
                         <div class="skill-item" data-aos="fade-up" data-aos-delay="1000">
                             <img src="assets/images/skills/sql.png" alt="SQL" class="skill-icon">
                             <div class="skill-info">
@@ -617,9 +659,9 @@
     <!-- Research -->
     <section id="Research">
         <div class="container">
-            <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">My Research Work</span></h6>
-            <h2 class="section-heading text-center">Research</h2>
-            <p class="text-center muted-text mt-3 mb-4">Current thesis and research projects</p>
+            <h6 class="text-left"><span class="btn btn-sm theme-button theme-text">My Research Work</span></h6>
+            <h2 class="section-heading text-left" style="color: #000;">Research</h2>
+            <p class="text-left muted-text mt-3 mb-4">Current thesis and research projects</p>
 
             <div class="row justify-content-center">
                 <div class="col-lg-10">
@@ -673,11 +715,9 @@
          <!-- Certificates -->
     <section id="certificates">
         <div class="container">
-            <div class="d-flex align-items-center mb-3">
-                <h6 class="me-3"><span class="btn btn-sm theme-button theme-text">Credentials</span></h6>
-                <h2 class="section-heading mb-0">Certificates</h2>
-            </div>
-            <p class="muted-text mt-1 mb-4">Some certifications I've earned — click View to open the official certificate.</p>
+            <h6 class="text-left mb-3"><span class="btn btn-sm theme-button theme-text">Credentials</span></h6>
+            <h2 class="section-heading text-left mb-3" style="color: #000;">Certificates</h2>
+            <p class="text-left muted-text mt-1 mb-4">Some certifications I've earned — click View to open the official certificate.</p>
 
             <!-- Simple responsive grid of link-cards inspired by user's snippet -->
             <div class="row justify-content-center gy-4" data-aos="fade-up">
