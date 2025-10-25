@@ -24,6 +24,23 @@ document.addEventListener('DOMContentLoaded', () => {
             setTheme(currentTheme);
         });
     });
+    // Initialize Bootstrap ScrollSpy with offset matching header height
+    try {
+        var rootStyles = getComputedStyle(document.documentElement);
+        var headerHeight = parseInt(rootStyles.getPropertyValue('--header-height')) || 76;
+        if (typeof bootstrap !== 'undefined' && bootstrap.ScrollSpy) {
+            // Dispose any existing ScrollSpy on body to avoid duplicates
+            if (document.body._bs_scrollspy) {
+                document.body._bs_scrollspy.dispose && document.body._bs_scrollspy.dispose();
+            }
+            var spy = new bootstrap.ScrollSpy(document.body, { target: '#navbar', offset: headerHeight + 8 });
+            // store reference for potential disposal
+            document.body._bs_scrollspy = spy;
+        }
+    } catch (e) {
+        // fail silently if bootstrap not available yet
+        console.warn('ScrollSpy init skipped:', e);
+    }
 });
 
 //AOS Initiliaze
@@ -31,21 +48,12 @@ AOS.init();
 
 // Fixed Header & back to top button on Scroll
 window.addEventListener('scroll', () => {
-    // fixed header
-    const header = document.getElementById('header');
-    if (window.scrollY > 30 && !header.classList.contains('fixed-top')) {
-        header.classList.add('fixed-top');
-        document.getElementById('offcanvasNavbar').classList.add('fixedHeaderNavbar');
-    } else if (window.scrollY <= 30 && header.classList.contains('fixed-top')) {
-        header.classList.remove('fixed-top');
-        document.getElementById('offcanvasNavbar').classList.remove('fixedHeaderNavbar');
-    }
-
-    //backtotop
+    // Only handle back-to-top visibility here. Header is fixed by default.
     const backToTopButton = document.getElementById("backToTopButton");
-    if (window.scrollY > 400 && backToTopButton.style.display === 'none') {
+    if (!backToTopButton) return;
+    if (window.scrollY > 400) {
         backToTopButton.style.display = 'block';
-    } else if (window.scrollY <= 400 && backToTopButton.style.display === 'block') {
+    } else {
         backToTopButton.style.display = 'none';
     }
 });

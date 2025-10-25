@@ -16,6 +16,7 @@
 /* Global Variables */
 :root{
     --font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --header-height: 76px;
     --primary-color: #415de6;
     --secondary-color: #e64157;
     --tertiary-color: #12c2e9;
@@ -368,15 +369,37 @@ h6 { font-size: 16px; }
 # Header Section
 --------------------------------------------------------------*/
 
+
+/* Keep header fixed at top at all times so navbar is always visible */
 #header{
     background: transparent;
     transition: top 0.5s ease;
     -webkit-transition: top 0.5s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 11000; /* very high so it stays above page content */
+}
+
+#header.fixed-top {
+    z-index: 1100;
 }
 
 .fixed-top{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    /* stronger background so navbar is visible on busy/dark hero */
+    background: rgba(6,6,10,0.88);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+    transition: background 200ms ease, box-shadow 200ms ease;
 }
 
 #header .navbar{
@@ -430,6 +453,23 @@ h6 { font-size: 16px; }
     font-size: 28px;
 }
 
+/* Ensure nav links are visible and high contrast */
+.navbar-nav .nav-link {
+    color: var(--text-color) !important;
+    opacity: 0.95;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: var(--primary-color) !important;
+    text-decoration: none;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
 .navbar-toggler:focus {
     box-shadow: none;
     -webkit-box-shadow: none;
@@ -437,12 +477,15 @@ h6 { font-size: 16px; }
 
 .offcanvas{
     background-color: var(--offcanvas-bg);
+    /* ensure mobile offcanvas opens below the fixed header */
+    top: var(--header-height) !important;
+    height: calc(100% - var(--header-height)) !important;
 }
 
 .offcanvas.show ul {
-    position: absolute;
+    position: fixed;
     justify-content: flex-start!important;
-    top: 76.9px;
+    top: var(--header-height);
     left: 15px;
     right: 15px;
     bottom: 15px; 
@@ -1273,6 +1316,7 @@ h6 { font-size: 16px; }
             background: linear-gradient(45deg, #0a1128 0%, #1a237e 100%);
             position: relative;
             overflow-x: hidden;
+            padding-top: var(--header-height);
         }
         
         body::before {
@@ -1293,6 +1337,20 @@ h6 { font-size: 16px; }
 .section-heading {
     position: relative;
     margin-bottom: 2rem;
+}
+
+/* Smooth scrolling and offset for fixed header so anchor targets are visible */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Make sure sections and headings leave space for the fixed header when navigated to */
+section {
+    scroll-margin-top: calc(var(--header-height) + 12px);
+}
+
+.section-heading, h1, h2, h3 {
+    scroll-margin-top: calc(var(--header-height) + 8px);
 }
 
 #Research .section-heading,
@@ -1377,4 +1435,36 @@ h6 { font-size: 16px; }
             bottom: 10%;
             left: 30%;
             animation: float 12s infinite ease-in-out;
+        }
+
+        /* Make header more compact on small screens and adjust header height variable */
+        @media (max-width: 767px) {
+            :root {
+                --header-height: 64px;
+            }
+
+            /* Reduce navbar padding and logo size on mobile */
+            #header .navbar {
+                padding: 8px 0;
+            }
+
+            .logo-name {
+                font-size: 1.15rem;
+            }
+
+            /* Ensure the body top padding follows the smaller header */
+            body {
+                padding-top: var(--header-height);
+            }
+
+            /* Slightly reduce hero top spacing on mobile so content is visible */
+            #hero {
+                padding-top: 110px;
+            }
+
+            /* Tighter spacing in mobile nav offcanvas */
+            .offcanvas.show ul {
+                padding: 6px 12px;
+                top: var(--header-height);
+            }
         }
