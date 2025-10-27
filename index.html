@@ -107,28 +107,36 @@
                 overflow: hidden;
                 white-space: nowrap;
                 margin: 0;
-                animation: typing 2s steps(20, end);
+                animation: typing 2s steps(20, end) infinite;
             }
 
-            /* Typewriter effect for MD.Nurzaman */
-            .typewriter-text-2 {
-                overflow: hidden;
-                white-space: nowrap;
-                margin: 0;
-                visibility: hidden;
-                animation: typing 2s steps(20, end) 2s forwards;
-            }
+           /* Typewriter effect for MD.Nurzaman */
+.typewriter-text-2 {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+    visibility: hidden;
+    border-right: 3px solid #00ff9f; /* optional: blinking cursor look */
+    animation: typing 6s steps(30, end) 6s forwards, blink 0.9s step-end infinite;
+}
 
-            @keyframes typing {
-                from { 
-                    width: 0;
-                    visibility: visible;
-                }
-                to { 
-                    width: 100%;
-                    visibility: visible;
-                }
-            }
+/* Typewriter animation */
+@keyframes typing {
+    from { 
+        width: 0;
+        visibility: visible;
+    }
+    to { 
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
         </style>
 
     <!-- Floating shapes moved to body (invalid inside head) -->
