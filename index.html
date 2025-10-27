@@ -44,102 +44,8 @@
     <link rel="stylesheet" href="assets/css/modern-effects.css">
     <link rel="stylesheet" href="assets/css/modern-about.css">
     <link rel="stylesheet" href="assets/css/modern-background.css">
-
-        <!-- Certificates custom styles and global font settings -->
-        <style>
-            /* Global font: body uses Arial, headings use Times New Roman */
-            body { font-family: Arial, Helvetica, sans-serif; }
-            h1,h2,h3,h4,h5,h6, .section-heading { font-family: 'Times New Roman', Times, serif; }
-
-            /* Certificates section visual style to match portfolio theme */
-            #certificates { padding: 60px 0; }
-            /* Keep certificate heading styling subtle */
-            #certificates .section-heading { color: #ff6b6b; font-style: italic; }
-            #certificates .muted-text { color: rgba(255,255,255,0.75); }
-            #certificates .card { background: rgba(10,6,20,0.6); border-radius:12px; }
-            #certificates .card .card-body { padding: 28px; }
-            #certificates .card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.6); transition: all 240ms ease; }
-            #certificates .btn-outline-primary { border-color: rgba(58,123,255,0.9); color: rgba(58,123,255,0.95); }
-            #certificates .btn-outline-primary:hover { background: rgba(58,123,255,0.06); }
-            @media (max-width: 767px) { #certificates .section-heading { text-align:center; padding-left:0 } }
-
-            /* Force-center all headings and flex containers site-wide */
-            .section-heading,
-            h1, h2, h3, h4, h5, h6,
-            .card-title,
-            .education-title,
-            .skill-info h5,
-            .bio h3 { 
-                text-align: center !important; 
-            }
-
-            /* Center all flex container titles */
-            .d-flex,
-            .flex-container,
-            .title-container,
-            .section-title,
-            .heading-wrapper { 
-                justify-content: center !important;
-            }
-
-            /* Ensure section titles and subtitles are centered */
-            .text-center,
-            .section-subtitle,
-            .card-text,
-            .muted-text { 
-                text-align: center !important;
-            }
-
-            /* Center specific section headers */
-            #certificates .d-flex, 
-            #leadership .d-flex,
-            #skills .d-flex,
-            #projects .d-flex,
-            #about .d-flex,
-            #education .d-flex,
-            #Research .d-flex,
-            #things-i-love .d-flex { 
-                justify-content: center !important;
-            }
-
-            /* Typewriter effect for Hello */
-            .typewriter-text {
-                overflow: hidden;
-                white-space: nowrap;
-                margin: 0;
-                animation: typing 2s steps(20, end) infinite;
-            }
-
-           /* Typewriter effect for MD.Nurzaman */
-.typewriter-text-2 {
-    overflow: hidden;
-    white-space: nowrap;
-    margin: 0;
-    visibility: hidden;
-    border-right: 3px solid #00ff9f; /* optional: blinking cursor look */
-    animation: typing 6s steps(30, end) 6s forwards, blink 0.6s step-end infinite;
-}
-
-/* Typewriter animation */
-@keyframes typing {
-    from { 
-        width: 0;
-        visibility: visible;
-    }
-    to { 
-        width: 100%;
-        visibility: visible;
-    }
-}
-
-/* Blinking cursor animation */
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-
-        </style>
-
-    <!-- Floating shapes moved to body (invalid inside head) -->
+    <link rel="stylesheet" href="assets/css/Certificates.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
 
     <!-- Preload Important resources -->
     <link rel="preload" href="assets/css/aos.css" as="style" >
@@ -157,7 +63,6 @@
     })(window, document, "clarity", "script", "ld2h640kif");
     </script>
     <script src="assets/js/skills-animation.js"></script>
- 
 </head>
 
 <body data-bs-theme="dark" data-bs-spy="scroll" data-bs-target="#navbar">
@@ -271,56 +176,7 @@
         </nav>
     </header>
 
-    <style>
-        /* Style for dark mode toggle */
-        .social-icons-wrapper {
-            position: relative;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* Contact-area theme toggle styling (kept) */
-        #Contact #switchTheme {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(5px);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        #Contact .social-icons #switchTheme:hover {
-            background: rgba(255,255,255,0.2);
-            transform: scale(1.1);
-        }
-
-        #Contact .social-icons #switchTheme i {
-            color: #ffd700;
-            transition: all 0.3s ease;
-        }
-
-        [data-bs-theme="light"] #Contact .social-icons #switchTheme i {
-            color: #ff8c00;
-        }
-
-        @media (max-width: 768px) {
-            #switchTheme {
-                margin-right: 0.5rem;
-            }
-            .navbar #switchTheme {
-                order: 1;
-            }
-        }
-    </style>
-
+   
     <!-- Hero -->
     <section id="hero">
         <div class="container">     
@@ -916,42 +772,7 @@
                                                </div>
                     </div>
                     
-<style>
-    #Contact .social-icons #switchTheme {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: rgba(255,255,255,0.1);
-        backdrop-filter: blur(5px);
-        transition: all 0.3s ease;
-        margin-left: 1rem;
-        vertical-align: middle;
-    }
-    
-    #Contact .social-icons #switchTheme:hover {
-        background: rgba(255,255,255,0.2);
-        transform: scale(1.1);
-    }
-    
-    #Contact .social-icons #switchTheme i {
-        color: #ffd700;
-        transition: all 0.3s ease;
-    }
-    
-    [data-bs-theme="light"] #Contact .social-icons #switchTheme i {
-        color: #ff8c00;
-    }
-
-    @media (max-width: 768px) {
-        #Contact .social-icons #switchTheme {
-            margin-left: 0.5rem;
-        }
-    }
-</style>
-                                        <div>
+             <div>
 
                                     </div>
                                 </div>
