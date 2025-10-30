@@ -1,92 +1,185 @@
-<!-- Certificates custom styles and global font settings -->
-        <style>
-            /* Global font: body uses Arial, headings use Times New Roman */
-            body { font-family: Arial, Helvetica, sans-serif; }
-            h1,h2,h3,h4,h5,h6, .section-heading { font-family: 'Times New Roman', Times, serif; }
+/* Certificates custom styles and global font settings */
+/* Clean CSS (removed accidental HTML tags and <style> wrapper) */
 
-            /* Certificates section visual style to match portfolio theme */
-            #certificates { padding: 60px 0; }
-            /* Keep certificate heading styling subtle */
-            #certificates .section-heading { color: #ff6b6b; font-style: italic; }
-            #certificates .muted-text { color: rgba(255,255,255,0.75); }
-            #certificates .card { background: rgba(10,6,20,0.6); border-radius:12px; }
-            #certificates .card .card-body { padding: 28px; }
-            #certificates .card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.6); transition: all 240ms ease; }
-            #certificates .btn-outline-primary { border-color: rgba(58,123,255,0.9); color: rgba(58,123,255,0.95); }
-            #certificates .btn-outline-primary:hover { background: rgba(58,123,255,0.06); }
-            @media (max-width: 767px) { #certificates .section-heading { text-align:center; padding-left:0 } }
+/* Global font: body uses Arial, headings use Times New Roman */
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+h1,h2,h3,h4,h5,h6, .section-heading { font-family: 'Times New Roman', Times, serif; }
 
-            /* Force-center all headings and flex containers site-wide */
-            .section-heading,
-            h1, h2, h3, h4, h5, h6,
-            .card-title,
-            .education-title,
-            .skill-info h5,
-            .bio h3 { 
-                text-align: center !important; 
-            }
+/* Certificates section visual style to match portfolio theme */
+#certificates { padding: 60px 0; }
+#certificates .section-heading { color: #ff6b6b; font-style: italic; }
+#certificates .muted-text { color: rgba(255,255,255,0.75); }
+#certificates .card { background: rgba(10,6,20,0.6); border-radius:12px; }
+#certificates .card .card-body { padding: 28px; }
+#certificates .card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.6); transition: all 240ms ease; }
+#certificates .btn-outline-primary { border-color: rgba(58,123,255,0.9); color: rgba(58,123,255,0.95); }
+#certificates .btn-outline-primary:hover { background: rgba(58,123,255,0.06); }
+@media (max-width: 767px) { #certificates .section-heading { text-align:center; padding-left:0 } }
 
-            /* Center all flex container titles */
-            .d-flex,
-            .flex-container,
-            .title-container,
-            .section-title,
-            .heading-wrapper { 
-                justify-content: center !important;
-            }
+/* Force-center all headings and flex containers site-wide (kept intentionally specific) */
+.section-heading,
+h1, h2, h3, h4, h5, h6,
+.card-title,
+.education-title,
+.skill-info h5,
+.bio h3 { 
+    text-align: center !important; 
+}
 
-            /* Ensure section titles and subtitles are centered */
-            .text-center,
-            .section-subtitle,
-            .card-text,
-            .muted-text { 
-                text-align: center !important;
-            }
+/* Center all flex container titles */
+.d-flex,
+.flex-container,
+.title-container,
+.section-title,
+.heading-wrapper { 
+    justify-content: center !important;
+}
 
-            /* Center specific section headers */
-            #certificates .d-flex, 
-            #leadership .d-flex,
-            #skills .d-flex,
-            #projects .d-flex,
-            #about .d-flex,
-            #education .d-flex,
-            #Research .d-flex,
-            #things-i-love .d-flex { 
-                justify-content: center !important;
-            }
+/* Ensure section titles and subtitles are centered */
+.text-center,
+.section-subtitle,
+.card-text,
+.muted-text { 
+    text-align: center !important;
+}
 
-            /* Typewriter effect for Hello */
-            .typewriter-text {
-                overflow: hidden;
-                white-space: nowrap;
-                margin: 0;
-                animation: typing 2s steps(20, end) infinite;
-            }
+/* Center specific section headers */
+#certificates .d-flex, 
+#leadership .d-flex,
+#skills .d-flex,
+#projects .d-flex,
+#about .d-flex,
+#education .d-flex,
+#Research .d-flex,
+#things-i-love .d-flex { 
+    justify-content: center !important;
+}
 
-           /* Typewriter effect for MD.Nurzaman */
-.typewriter-text-2 {
+
+/* --- Certificate cards grid / visuals --- */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    align-items: start;
+}
+
+/* Responsive grid */
+@media (max-width: 1199px) {
+    .cert-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 767px) {
+    .cert-grid { grid-template-columns: 1fr; gap: 18px; }
+}
+
+.cert-card {
+    background: rgba(0,0,0,0.45);
+    border-radius: 12px;
     overflow: hidden;
-    white-space: nowrap;
+    transition: transform .28s ease, box-shadow .28s ease;
+    border: 1px solid rgba(255,255,255,0.04);
+}
+
+.cert-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+}
+
+.cert-thumb {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    padding: 12px;
+}
+
+.cert-meta {
+    padding: 18px 16px 24px 16px;
+    text-align: center;
+}
+
+.cert-title {
+    font-weight: 700;
+    margin-top: 8px;
+    margin-bottom: 6px;
+    color: #f8f9fa;
+}
+
+.cert-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 8px;
+}
+
+.cert-actions { text-align: center; margin-top: 6px; }
+
+/* Center card-body content specifically inside certificates so text and actions align */
+#certificates .card-body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+/* Ensure small meta lines are centered and don't overflow */
+#certificates .card-body p.small {
     margin: 0;
-    visibility: hidden;
-    border-right: 3px solid #00ff9f; /* optional: blinking cursor look */
-    animation: typing 6s steps(30, end) 6s forwards, blink 0.6s step-end infinite;
+    text-align: center;
+    word-break: break-word;
 }
 
-/* Typewriter animation */
-@keyframes typing {
-    from { 
-        width: 0;
-        visibility: visible;
-    }
-    to { 
-        width: 100%;
-        visibility: visible;
-    }
+/* Style and center the Show credential button inside certificate cards */
+#certificates .btn-outline-primary {
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
 }
 
-/* Blinking cursor animation */
-@keyframes blink {
-    50% { border-color: transparent; }
+#certificates .btn-outline-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(65,93,230,0.08);
+    background: rgba(65,93,230,0.04);
 }
+
+/* Stronger accessible focus ring for keyboard users */
+#certificates .btn-outline-primary:focus,
+#certificates .btn-outline-primary:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(65,93,230,0.16);
+    border-color: rgba(65,93,230,0.9);
+}
+
+/* Slight visual weight for credential id to make it readable */
+#certificates .card-body p.small.text-muted.mb-2 {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Helvetica Neue', monospace;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+}
+
+/* small tweak for certificate modal preview thumbnails */
+.cert-thumb-small { max-width: 140px; border-radius: 6px; }
+
+/* Ensure contrast in dark/light themes (respect data-bs-theme variables where present) */
+[data-bs-theme="light"] #certificates .card,
+[data-bs-theme="light"] .cert-card {
+    background: rgba(255,255,255,0.96);
+    color: #111;
+}
+
+/* accessibility: focus styles for show credential link/button */
+a.btn:focus, .btn:focus { outline: 3px solid rgba(65,93,230,0.28); outline-offset: 2px; }
+
+/* minor utility */
+.align-cert-center { display:flex; align-items:center; justify-content:center; }
+
+/* End of Certificates.css */
 

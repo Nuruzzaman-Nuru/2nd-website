@@ -190,7 +190,7 @@
                     </div>
                 </div>
                 <div class="col-lg-7 hero-content">
-                    <h1 class="name typewriter-text" data-aos="fade-up" data-aos-delay="0">Hello</h1>
+                    <h1 class="name typewriter-text" data-aos="fade-up" data-aos-delay="0">Hello! I'm</h1>
                     <h1 class="name typewriter-text-2" data-aos="fade-up" data-aos-delay="200"><span>MD.Nurzaman</h1>
                     <button type="button" class="btn btn-sm mt-3 mb-3 btn-showcase"  data-aos="fade-up" data-aos-delay="400"><i class="bi bi-stars"></i> Web Developer</button>
                     <p class="tagline mb-3" data-aos="fade-up" data-aos-delay="600">A website isn't just something I build—it's something I imagine <span class="underline">uniquely</span>. I believe in thinking differently, designing meaningfully, and coding with <span class="underline">care</span>.</p>
@@ -614,11 +614,13 @@
                         <div class="col">
                             <div class="card h-100 shadow-sm border-0" data-aos="fade-up">
                                 <div class="card-img-container">
-                                    <img src="assets/images/CERTIFICATIONS/Frontend devloper.png" class="card-img-top cert-thumb" data-full="assets/images/certificates/hackerrank.png" data-title="Frontend Developer (React) - HackerRank" alt="HackerRank certificate" onerror="this.style.display='none'">
+                                    <a href="#" class="cert-thumb-link" data-full="assets/images/certificates/hackerrank.png" data-title="Frontend Developer (React) - HackerRank" aria-label="Open certificate preview">
+                                        <img src="assets/images/CERTIFICATIONS/Frontend devloper.png" class="card-img-top cert-thumb" data-full="assets/images/certificates/hackerrank.png" data-title="Frontend Developer (React) - HackerRank" alt="HackerRank certificate" onerror="this.style.display='none'">
+                                    </a>
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title fw-bold">Frontend Developer (React)</h5>
-                                    <p class="small text-muted mb-1">HackerRank • Issued Oct 2025</p>
+                                    <p class="small text-muted mb-1">HackerRank • Issued 23 Oct 2025</p>
                                     <p class="small text-muted mb-2">Credential ID: C1189464A9DA</p>
                                     <a class="btn btn-outline-primary btn-sm" href="https://www.hackerrank.com/certificates/c1189464a9da" target="_blank" rel="noopener">Show credential <i class="bi bi-box-arrow-up-right ms-1"></i></a>
                                 </div>
@@ -633,14 +635,28 @@
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title fw-bold">Full-Stack Development 101</h5>
-                                    <p class="small text-muted mb-1">Simplilearn • Issued Oct 2025</p>
+                                    <p class="small text-muted mb-1">Simplilearn • Issued 22 Oct 2025</p>
                                     <p class="small text-muted mb-2">Certificate Code: 9214198</p>
                                     <a class="btn btn-outline-primary btn-sm" href="https://simpli-web.app.link/e/vKfcfiRAGXb" target="_blank" rel="noopener">Show credential <i class="bi bi-box-arrow-up-right ms-1"></i></a>
                                 </div>
                             </div>
                         </div>
-
+                       
                         <!-- Card 3 -->
+                        <div class="col">
+                            <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="100">
+                                <div class="card-img-container">
+                                    <img src="./assets/images/CERTIFICATIONS/ML with python.png" class="card-img-top cert-thumb" data-full="assets/images/certificates/simplelearn.png" data-title="Full-Stack Development 101 - Simplilearn" alt="Simplilearn certificate" onerror="this.style.display='none'">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">Machine Learning using Python (simplilearn)</h5>
+                                    <p class="small text-muted mb-1">Simplilearn • Issued 30 Oct 2025</p>
+                                    <a class="btn btn-outline-primary btn-sm" href="https://simpli-web.app.link/e/pocnwO7nSXb" target="_blank" rel="noopener">Show credential <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
                         <div class="col">
                             <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="200">
                                 <div class="card-img-container">
@@ -648,7 +664,7 @@
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title fw-bold">GIT, GitLab, GitHub Fundamentals</h5>
-                                    <p class="small text-muted mb-1">Udemy • Issued Oct 2025</p>
+                                    <p class="small text-muted mb-1">Udemy • Issued 23 Oct 2025</p>
                                     <p class="small text-muted mb-2">Credential ID: UC-f727bd59-1633-4017-a25d-37f616262338</p>
                                     <a class="btn btn-outline-primary btn-sm" href="https://www.udemy.com/certificate/UC-f727bd59-1633-4017-a25d-371616262338/" target="_blank" rel="noopener">Show credential <i class="bi bi-box-arrow-up-right ms-1"></i></a>
                                 </div>
@@ -870,10 +886,27 @@
                 const modalLabel = document.getElementById('certModalLabel');
                 const bsModal = new bootstrap.Modal(modalEl, {});
 
-                document.querySelectorAll('.cert-thumb').forEach(el => {
-                    el.addEventListener('click', () => {
-                        const full = el.getAttribute('data-full') || el.src;
-                        const title = el.getAttribute('data-title') || el.alt || 'Certificate';
+                // support clicking either the image (.cert-thumb) or its wrapper link (.cert-thumb-link)
+                document.querySelectorAll('.cert-thumb, .cert-thumb-link').forEach(el => {
+                    el.addEventListener('click', (ev) => {
+                        ev.preventDefault();
+                        // If clicked element is the wrapper, try to read data from it; otherwise from the image
+                        const target = el;
+                        let full = target.getAttribute('data-full') || target.getAttribute('data-full');
+                        let title = target.getAttribute('data-title') || target.getAttribute('data-title');
+
+                        if (!full) {
+                            // try to find img inside (for wrapper links)
+                            const img = target.tagName === 'IMG' ? target : target.querySelector && target.querySelector('img');
+                            if (img) {
+                                full = img.getAttribute('data-full') || img.src;
+                                title = img.getAttribute('data-title') || img.alt || title;
+                            }
+                        }
+
+                        full = full || '';
+                        title = title || 'Certificate';
+
                         modalImg.src = full;
                         modalLabel.textContent = title;
                         bsModal.show();
