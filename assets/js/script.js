@@ -48,6 +48,15 @@ AOS.init();
 
 // Fixed Header & back to top button on Scroll
 window.addEventListener('scroll', () => {
+    // Update scroll progress bar
+    const scrollProgressBar = document.getElementById('scrollProgressBar');
+    if (scrollProgressBar) {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        scrollProgressBar.style.width = scrolled + '%';
+    }
+    
     // Only handle back-to-top visibility here. Header is fixed by default.
     const backToTopButton = document.getElementById("backToTopButton");
     if (!backToTopButton) return;

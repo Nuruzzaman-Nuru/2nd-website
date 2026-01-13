@@ -487,6 +487,23 @@ h6 { font-size: 16px; }
     transition: background 200ms ease, box-shadow 200ms ease;
 }
 
+/* Scroll Progress Bar */
+.scroll-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--tertiary-color));
+    width: 0%;
+    z-index: 999;
+    transition: width 0.1s ease;
+    box-shadow: 0 0 10px rgba(65, 93, 230, 0.5);
+}
+
+#footer {
+    position: relative;
+}
+
 #header .navbar{
     backdrop-filter: 20px;
     -webkit-backdrop-filter: 20px;
@@ -596,16 +613,14 @@ h6 { font-size: 16px; }
 }
 
 .offcanvas.show ul {
-    position: fixed;
+    position: relative;
     justify-content: flex-start!important;
-    top: var(--header-height);
-    left: 15px;
-    right: 15px;
-    bottom: 15px; 
     padding: 10px 15px;
     transition: none;
     -webkit-transition: none;
     border: 2px solid var(--offcanvas-border-color);
+    overflow-y: auto;
+    max-height: calc(100vh - var(--header-height) - 100px);
 }
 
 .fixedHeaderNavbar{
