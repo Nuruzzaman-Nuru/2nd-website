@@ -1108,13 +1108,9 @@
                         emailjs.init({ publicKey: publicKey });
 
                         emailjs.send(serviceID, templateID, {
-                            from_name: name,
-                            from_email: email,
-                            subject: subject,
-                            message: message,
                             name: name,
-                            time: new Date().toLocaleString(),
-                            to_email: 'nuruzzamanmd074@gmail.com'
+                            message: message,
+                            subject: subject
                         })
                         .then(function () {
                             showFormStatus('Thanks for reaching out! Your message has been sent successfully. I\'ll get back to you as soon as possible.', 'success');
