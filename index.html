@@ -1056,22 +1056,24 @@
             display: block;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
             border: 1px solid transparent;
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 100%;
+            position: fixed;
+            top: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(90vw, 760px);
+            z-index: 9999;
         }
 
         #formStatus.alert-success {
-            background: rgba(25, 135, 84, 0.12);
+            background: rgba(25, 135, 84, 0.95);
             color: #d1fae5;
-            border-color: rgba(25, 135, 84, 0.4);
+            border-color: rgba(25, 135, 84, 0.8);
         }
 
         #formStatus.alert-danger {
-            background: rgba(220, 53, 69, 0.12);
+            background: rgba(220, 53, 69, 0.95);
             color: #fecaca;
-            border-color: rgba(220, 53, 69, 0.45);
+            border-color: rgba(220, 53, 69, 0.8);
         }
     </style>
     <script>
