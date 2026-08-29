@@ -997,8 +997,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <button type="submit" class="btn primary-bg-btn mt-2">Send Message <i class="bi bi-arrow-up-right"></i></button>
                                     <div id="formStatus" class="mt-3 d-none" role="alert"></div>
+                                    <button type="submit" class="btn primary-bg-btn mt-2">Send Message <i class="bi bi-arrow-up-right"></i></button>
                                 </div>
                             </div>
                         </form>
@@ -1045,6 +1045,35 @@
     <script src="assets/js/owl.carousel.min.js" defer></script>
     <script src="assets/js/bootstrap.min.js" defer></script>
     <script src="assets/js/script.js" defer></script>
+    <style>
+        #formStatus {
+            margin-top: 0 !important;
+            margin-bottom: 1rem;
+            padding: 0.9rem 1rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            display: block;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            border: 1px solid transparent;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        #formStatus.alert-success {
+            background: rgba(25, 135, 84, 0.12);
+            color: #d1fae5;
+            border-color: rgba(25, 135, 84, 0.4);
+        }
+
+        #formStatus.alert-danger {
+            background: rgba(220, 53, 69, 0.12);
+            color: #fecaca;
+            border-color: rgba(220, 53, 69, 0.45);
+        }
+    </style>
     <script>
         (function () {
             const modalEl = document.getElementById('certModal');
