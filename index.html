@@ -1088,11 +1088,36 @@
                         return;
                     }
 
-                    const serviceID = 'service_your_id';
-                    const templateID = 'template_your_id';
-                    const publicKey = 'your_public_key';
+                    const serviceID = 'service_0w60z4p';
+                    const templateID = 'template_5vqmnt';
+                    const publicKey = 'KpgLfJONVgi06pHCK';
 
-                    if (serviceID === 'service_your_id' || templateID === 'template_your_id' || publicKey === 'your_public_key') {
+                    if (window.emailjs) {
+                        emailjs.init({ publicKey: publicKey });
+
+                        emailjs.send(serviceID, templateID, {
+                            from_name: name,
+                            from_email: email,
+                            subject: subject,
+                            message: message,
+                            to_email: 'nuruzzamanmd074@gmail.com'
+                        })
+                        .then(function () {
+                            alert('Your message has been sent successfully!');
+                            contactForm.reset();
+                        })
+                        .catch(function (error) {
+                            console.error('EmailJS error:', error);
+                            const mailtoLink = 'mailto:nuruzzamanmd074@gmail.com' +
+                                '?subject=' + encodeURIComponent(subject || 'Portfolio Contact') +
+                                '&body=' + encodeURIComponent(
+                                    'Name: ' + name + '\n' +
+                                    'Email: ' + email + '\n\n' +
+                                    'Message:\n' + message
+                                );
+                            window.location.href = mailtoLink;
+                        });
+                    } else {
                         const mailtoLink = 'mailto:nuruzzamanmd074@gmail.com' +
                             '?subject=' + encodeURIComponent(subject || 'Portfolio Contact') +
                             '&body=' + encodeURIComponent(
@@ -1100,36 +1125,9 @@
                                 'Email: ' + email + '\n\n' +
                                 'Message:\n' + message
                             );
-
                         window.location.href = mailtoLink;
                         contactForm.reset();
-                        return;
                     }
-
-                    emailjs.init({ publicKey: publicKey });
-
-                    emailjs.send(serviceID, templateID, {
-                        from_name: name,
-                        from_email: email,
-                        subject: subject,
-                        message: message,
-                        to_email: 'nuruzzamanmd074@gmail.com'
-                    })
-                    .then(function () {
-                        alert('Your message has been sent successfully!');
-                        contactForm.reset();
-                    })
-                    .catch(function (error) {
-                        console.error('EmailJS error:', error);
-                        const mailtoLink = 'mailto:nuruzzamanmd074@gmail.com' +
-                            '?subject=' + encodeURIComponent(subject || 'Portfolio Contact') +
-                            '&body=' + encodeURIComponent(
-                                'Name: ' + name + '\n' +
-                                'Email: ' + email + '\n\n' +
-                                'Message:\n' + message
-                            );
-                        window.location.href = mailtoLink;
-                    });
                 });
             }
         })();
