@@ -1101,7 +1101,7 @@
                     }
 
                     const serviceID = 'service_0w60z4p';
-                    const templateID = 'template_5vqmnt';
+                    const templateID = 'template_5vqm8mt';
                     const publicKey = 'KpgLfJONVgi06pHCK';
 
                     if (window.emailjs) {
@@ -1112,6 +1112,8 @@
                             from_email: email,
                             subject: subject,
                             message: message,
+                            name: name,
+                            time: new Date().toLocaleString(),
                             to_email: 'nuruzzamanmd074@gmail.com'
                         })
                         .then(function () {
